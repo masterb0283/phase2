@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENGLISH QUIZ</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="join">
+        <a href="https://chat.whatsapp.com/KCnFSLBhRKd4gzuAJ0lmVi">JOIN OUR <br>JAMB GROUP</a>
+    </div>
+
+    <div class="form-container">
+        <h2>ENTER YOUR DETAILS</h2>
+        <form id="details-form">
+            <input type="text" placeholder="Name" required >
+            <input type="number" placeholder="Phone Number" required >
+            <div class="button-group">
+                <button type="button" class="cancel-btn" onclick="cancel()">CANCEL</button>
+                <button type="submit" class="start-btn" onclick="start(event)">START QUIZ</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="urg">
+        <a href="https://wa.me/message/4YLTUR33HC3LA1">click here if you need jamb assistance</a> 
+    </div>
+
+    <script>
+        function cancel() {
+            window.location.href = 'index.html';
+        }
+
+        function start(event) {
+            event.preventDefault(); // Prevents form from submitting
+            window.location.href = 'test3.html';
+        }
+    </script>
+</body>
+</html>

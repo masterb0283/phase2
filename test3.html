@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAMB CBT TEST</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Quiz Section -->
+    <div class="quiz-container">
+        <h1>JAMB ENGLISH TEST</h1>
+        <div id="quiz"></div>
+        <button type="button" id="submit">Submit Quiz</button>
+        <div id="result"></div>
+    </div>
+
+    <!-- Dashboard Section -->
+    <div class="dashboard">
+        <div class="header">
+            <h1>2025 JAMB ASSITANCE IS AVAILABLE WITH OFFICIAL DAN</h1>
+            <p>Official Dan - 09027420688</p>
+        </div>
+
+        <div class="stats">
+            <div class="stat-item">
+                <h3>Subscribe for assistance to get Highest Score</h3>
+                <p id="highest-score">270 to 350</p>
+            </div>
+            <div class="stat-item">
+                <h3>Average Score if you subscribe for assistance</h3>
+                <p id="average-score">270 above</p>
+            </div>
+        </div>
+
+        <footer>
+            <p>OFFICIAL DAN - 09027420688</p>
+        </footer>
+    </div>
+
+    <div class="urg">
+        <a href="https://wa.me/message/4YLTUR33HC3LA1">click here if you need jamb assistance</a> 
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // Quiz Logic
+        const quizQuestions = [
+            {
+                question: "1. Which sentence is grammatically correct?",
+                options: [
+                    "A) She don't like chocolate.",
+                    "B) She doesn't likes chocolate.",
+                    "C) She doesn't like chocolate.",
+                    "D) She do not like chocolate."
+                ],
+                correctAnswer: 2
+            },
+            {
+                question: "2. Identify the correct indirect speech: 'She said, \"I am going to the market.\"'",
+                options: [
+                    "A) She said that she is going to the market.",
+                    "B) She said that she was going to the market.",
+                    "C) She said that she will go to the market.",
+                    "D) She said that she goes to the market."
+                ],
+                correctAnswer: 1
+            },
+            {
+                question: "3. What is the meaning of the idiom 'spill the beans'?",
+                options: [
+                    "A) To make a mess",
+                    "B) To reveal a secret",
+                    "C) To cook a meal",
+                    "D) To lose one's temper"
+                ],
+                correctAnswer: 1
+            },
+            {
+                question: "4. Choose the correctly punctuated sentence:",
+                options: [
+                    "A) My friends brother, who lives in Canada, is visiting us.",
+                    "B) My friend’s brother, who lives in Canada, is visiting us.",
+                    "C) My friends’ brother, who lives in Canada, is visiting us.",
+                    "D) My friends, brother who lives in Canada, is visiting us."
+                ],
+                correctAnswer: 1
+            },
+            {
+                question: "5. Which word is a synonym for 'alleviate'?",
+                options: [
+                    "A) Aggravate",
+                    "B) Worsen",
+                    "C) Relieve",
+                    "D) Increase"
+                ],
+                correctAnswer: 2
+            },
+            {
+                question: "6. What is the past perfect tense of the verb 'to run'?",
+                options: [
+                    "A) Have ran",
+                    "B) Had run",
+                    "C) Had ran",
+                    "D) Has run"
+                ],
+                correctAnswer: 1
+            },
+            {
+                question: "7. Which of the following is an example of a compound sentence?",
+                options: [
+                    "A) She went to the store, but it was closed.",
+                    "B) Because it was raining, we stayed indoors.",
+                    "C) She ran quickly.",
+                    "D) He is tall and strong."
+                ],
+                correctAnswer: 0
+            },
+            {
+                question: "8. What type of clause is the underlined part: 'I will call you *when I arrive*'?",
+                options: [
+                    "A) Noun clause",
+                    "B) Adjective clause",
+                    "C) Adverbial clause",
+                    "D) Independent clause"
+                ],
+                correctAnswer: 2
+            },
+            {
+                question: "9. What is the correct order of adjectives in this sentence: 'She has a _____ bag.'",
+                options: [
+                    "A) Small, red, leather",
+                    "B) Red, leather, small",
+                    "C) Leather, small, red",
+                    "D) Red, small, leather"
+                ],
+                correctAnswer: 0
+            },
+            {
+                question: "10. Which of the following is a correct example of subject-verb agreement?",
+                options: [
+                    "A) The books is on the table.",
+                    "B) The book are on the table.",
+                    "C) The books are on the table.",
+                    "D) The book were on the table."
+                ],
+                correctAnswer: 2
+            },
+            {
+                question: "11. Which of the following sentences uses the passive voice?",
+                options: [
+                    "A) The chef cooked a delicious meal.",
+                    "B) The meal was cooked by the chef.",
+                    "C) The chef is cooking a meal.",
+                    "D) The meal has been cooking for hours."
+                ],
+                correctAnswer: 1
+            },
+            {
+                question: "12. Which is an example of a metaphor?",
+                options: [
+                    "A) He is as brave as a lion.",
+                    "B) The classroom was a zoo.",
+                    "C) She sings like an angel.",
+                    "D) The wind howled all night."
+                ],
+                correctAnswer: 1
+            },
+            {
+                question: "13. Choose the correct form of the verb in the sentence: 'If she _____ the book, she would have understood.'",
+                options: [
+                    "A) reads",
+                    "B) read",
+                    "C) had read",
+                    "D) reading"
+                ],
+                correctAnswer: 2
+            },
+            {
+                question: "14. What is the antonym of 'benevolent'?",
+                options: [
+                    "A) Cruel",
+                    "B) Generous",
+                    "C) Kind",
+                    "D) Sympathetic"
+                ],
+                correctAnswer: 0
+            },
+            {
+                question: "15. What type of conjunction is used in this sentence: 'He ran quickly, but he missed the bus.'?",
+                options: [
+                    "A) Subordinating conjunction",
+                    "B) Correlative conjunction",
+                    "C) Coordinating conjunction",
+                    "D) Conjunctive adverb"
+                ],
+                correctAnswer: 2
+            },
+            {
+                question: "16. Which of the following words is a homophone?",
+                options: [
+                    "A) Bare",
+                    "B) Bear",
+                    "C) Break",
+                    "D) Brake"
+                ],
+                correctAnswer: 0
+            },
+            {
+                question: "17. Which of the following sentences is an example of alliteration?",
+                options: [
+                    "A) Peter Piper picked a peck of pickled peppers.",
+                    "B) The sun sets in the west.",
+                    "C) She sells sea shells by the sea shore.",
+                    "D) The quick brown fox jumps over the lazy dog."
+                ],
+                correctAnswer: 0
+            },
+            {
+                question: "18. What is the function of the word 'quickly' in the sentence: 'He ran quickly to catch the train.'?",
+                options: [
+                    "A) Adverb",
+                    "B) Adjective",
+                    "C) Noun",
+                    "D) Verb"
+                ],
+                correctAnswer: 0
+            },
+            {
+                question: "19. Which of the following sentences contains a dangling modifier?",
+                options: [
+                    "A) Driving home, the sun set on the horizon.",
+                    "B) The sun was setting as we drove home.",
+                    "C) As we drove home, the sun set.",
+                    "D) We drove home as the sun set."
+                ],
+                correctAnswer: 0
+            },
+            {
+                question: "20. What is the difference between 'affect' and 'effect'?",
+                options: [
+                    "A) 'Affect' is a noun, 'effect' is a verb.",
+                    "B) 'Affect' is a verb, 'effect' is a noun.",
+                    "C) They are interchangeable.",
+                    "D) 'Affect' is more formal than 'effect'."
+                ],
+                correctAnswer: 1
+            }
+        ];
+
+        const quizContainer = document.getElementById('quiz');
+        const resultContainer = document.getElementById('result');
+        const submitButton = document.getElementById('submit');
+
+        function displayQuiz() {
+            const output = [];
+            quizQuestions.forEach((currentQuestion, questionNumber) => {
+                const answers = [];
+                currentQuestion.options.forEach((option, index) => {
+                    answers.push(
+                        `<label>
+                            <input type="radio" name="question${questionNumber}" value="${index}">
+                            ${option}
+                        </label>`
+                    );
+                });
+                output.push(
+                    `<div class="question"> ${currentQuestion.question} </div>
+                    <div class="answers"> ${answers.join('')} </div>`
+                );
+            });
+            quizContainer.innerHTML = output.join('');
+        }
+
+        function showResults() {
+            const answerContainers = quizContainer.querySelectorAll('.answers');
+            let score = 0;
+
+            quizQuestions.forEach((currentQuestion, questionNumber) => {
+                const answerContainer = answerContainers[questionNumber];
+                const selector = `input[name=question${questionNumber}]:checked`;
+                const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+
+                if (userAnswer == currentQuestion.correctAnswer) {
+                    score++;
+                }
+            });
+
+            // Display score directly on the page
+            resultContainer.innerHTML = `You scored ${score} out of ${quizQuestions.length}`;
+
+            // Prepare WhatsApp message
+            const message = `I scored ${score} out of ${quizQuestions.length}`;
+            const whatsappLink = `https://wa.me/2349027420688?text=${encodeURIComponent(message)}`;
+
+            // Redirect to WhatsApp after 1 second
+            setTimeout(() => {
+                window.location.href = whatsappLink;
+            }, 1000); // 1000 milliseconds = 1 second
+        }
+
+        displayQuiz();
+        submitButton.addEventListener('click', showResults);
+    </script>
+</body>
+</html>

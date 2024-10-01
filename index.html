@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAMB ENGLISH QUIZ</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="join">
+        <a href="https://chat.whatsapp.com/KCnFSLBhRKd4gzuAJ0lmVi">JOIN OUR <br>JAMB GROUP</a>
+    </div>
+    <div class="container">
+        <h1>JAMB ENGLISH TEST(CBT PRACTICE)</h1>
+        <h2> CBT TEST</h2>
+        <p>Total Questions : 20</p>
+        <button onclick="startQuiz()">START</button>
+    </div>
+
+    
+    <div class="urg">
+        <a href="https://wa.me/message/4YLTUR33HC3LA1">click here if you need jamb assistance</a> 
+    </div>
+
+    <script>
+        function startQuiz() {
+            window.location.href = 'form.html';
+        }
+
+        // Make the entire div.urg clickable
+        document.querySelectorAll('.urg').forEach(function(div) {
+            div.addEventListener('click', function() {
+                window.location.href = div.querySelector('a').href;
+            });
+        });
+    </script>
+</body>
+</html>
